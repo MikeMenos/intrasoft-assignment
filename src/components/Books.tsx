@@ -1,50 +1,44 @@
 "use client";
 
-import Image from "next/image";
-import data from "../data.json";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import LinesEllipsis from "react-lines-ellipsis";
-import { CiStar } from "react-icons/ci";
-import Link from "next/link";
+import { Fade } from "react-awesome-reveal";
+import BooksList from "./BooksList";
+import { useTotalBooksContext } from "@/lib/context";
+import { FC } from "react";
+import { IBook } from "@/lib/interfaces";
+import { textFormatter } from "@/lib/utils";
 
-const Books = () => {
-  // if data was fetched from an api, loading and error states would have been added.
+interface IProps {
+  filteredBooks: IBook[] | undefined;
+  filterName: string;
+}
+
+const Books: FC<IProps> = ({ filteredBooks, filterName }) => {
+  const { totalBooksData } = useTotalBooksContext();
+
+  if (filteredBooks?.length === 0)
+    return (
+      <div className="text-center font-semibold text-lg mt-10">
+        No results found while filtering by{" "}
+        {
+          <span className="text-main text-xl">
+            {textFormatter(filterName)}.
+          </span>
+        }
+      </div>
+    );
+
   return (
-    <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 xl:px-0">
-      {/* book interface is inferred automatically, no need to define it */}
-      {data.books.map((book) => (
-        <Link href={book.isbn} key={book.isbn}>
-          <Card className="hover:scale-[1.02] cursor-pointer transition-all duration-200 h-[300px] w-[300px]">
-            <CardHeader>
-              <Image src="" alt="Book Cover" />
-              <CardTitle>{book.title}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <LinesEllipsis
-                text={book.description}
-                maxLine="3"
-                ellipsis="..."
-                trimRight
-                basedOn="letters"
-              />
-            </CardContent>
-            <CardFooter>
-              {[...Array(5)].map((_, index) => (
-                <span key={index}>
-                  <CiStar size={25} />
-                </span>
-              ))}
-            </CardFooter>
-          </Card>
-        </Link>
-      ))}
-    </div>
+    <Fade>
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 xl:px-0">
+        {filteredBooks === undefined
+          ? totalBooksData.books.map((book) => (
+              <BooksList book={book} key={book.isbn} />
+            ))
+          : filteredBooks.map((filteredBook) => (
+              <BooksList book={filteredBook} key={filteredBook.isbn} />
+            ))}
+      </div>
+    </Fade>
   );
 };
 
