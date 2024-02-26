@@ -24,7 +24,7 @@ const BooksList: FC<IProps> = ({ book }) => {
         <CardHeader className="flex flex-col items-center">
           <Image src={book.image} alt="Book Cover" width={100} height={100} />
           <CardTitle className="text-center">{book.title}</CardTitle>
-          <p className="italic text-sm">By {book.author}</p>
+          <p className="italic text-sm text-center">By {book.author}</p>
         </CardHeader>
         <CardContent className="text-center">
           <p>{book.subtitle}</p>

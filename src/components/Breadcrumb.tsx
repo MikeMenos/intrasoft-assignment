@@ -1,4 +1,5 @@
 "use client";
+import { textFormatter } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -19,9 +20,9 @@ const Breadcrumb = () => {
           return (
             <li key={pathname}>
               {!isLast ? (
-                <Link href={routeTo}>{capitalizeFirstLetter(pathname)}</Link>
+                <Link href={routeTo}>{textFormatter(pathname)}</Link>
               ) : (
-                <span>{capitalizeFirstLetter(pathname)}</span>
+                <span>{textFormatter(pathname)}</span>
               )}
             </li>
           );
@@ -30,9 +31,5 @@ const Breadcrumb = () => {
     </nav>
   );
 };
-
-function capitalizeFirstLetter(pathname: string) {
-  return pathname.charAt(0).toUpperCase() + pathname.slice(1);
-}
 
 export default Breadcrumb;
