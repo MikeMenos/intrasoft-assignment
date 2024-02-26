@@ -1,16 +1,23 @@
+"use client"
+
 import { createContext, useContext } from "react";
 import { BookContextType, TotalBooksContextType } from "./interfaces";
 import data from "../data.json";
 
 export const initialBookData = {
-  isbn: "",
+  isbn: null,
+  isbn13: null,
+  year: null,
   title: "",
   subtitle: "",
-  author: "",
+  authors: [''],
+  categories: [''],
   published: "",
   publisher: "",
-  pages: 0,
+  pages: null,
   description: "",
+  website: "",
+  image:""
 };
 
 export const initialTotalBooksData = data;

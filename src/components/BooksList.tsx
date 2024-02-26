@@ -19,12 +19,14 @@ interface IProps {
 
 const BooksList: FC<IProps> = ({ book }) => {
   return (
-    <Link href={book.isbn}>
+    <Link href={book.isbn?.toString()!}>
       <Card className="hover:scale-[1.02] cursor-pointer transition-all duration-200 h-[400px] flex flex-col justify-center items-center">
         <CardHeader className="flex flex-col items-center">
           <Image src={book.image} alt="Book Cover" width={100} height={100} />
           <CardTitle className="text-center">{book.title}</CardTitle>
-          <p className="italic text-sm text-center">By {book.author}</p>
+          <p className="italic text-sm text-center">
+            By {book.authors.join(", ")}
+          </p>
         </CardHeader>
         <CardContent className="text-center">
           <p>{book.subtitle}</p>

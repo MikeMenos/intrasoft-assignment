@@ -14,20 +14,28 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import { IBook } from "@/lib/interfaces";
 import { textFormatter } from "@/lib/utils";
+import { NextPage } from "next";
+import Link from "next/link";
+import { IoMdAddCircleOutline } from "react-icons/io";
 
-// Not useful to filter by book pages number - TS complained about toLowerCase() in line 42
 type BookKey = Exclude<keyof typeof initialBookData, "pages">;
 
-export default function Home() {
-  const [bookData, setBookData] = useState(initialBookData);
+const Home: NextPage = () => {
+  const [bookData, setBookData] = useState<IBook>(initialBookData);
   const [filteredBooks, setFilteredBooks] = useState<IBook[] | undefined>(
     undefined
   );
   const [filterName, setFilterName] = useState<BookKey>("title");
   const { totalBooksData } = useTotalBooksContext();
-  const filterOptions = ["title", "isbn", "author", "publisher"];
+  const filterOptions = ["title", "subtitle", "isbn", "authors", "publisher"];
 
   const onFilterOptionSelect = (option: BookKey) => {
     setBookData(initialBookData);
@@ -39,7 +47,10 @@ export default function Home() {
     const { name, value } = e.target;
     setBookData((prevState) => ({ ...prevState, [name]: value }));
     const filteredBooks = totalBooksData.books.filter((book) => {
-      return book[filterName].toLowerCase().includes(value.toLowerCase());
+      return book[filterName]
+        ?.toString()
+        .toLowerCase()
+        .includes(value.toLowerCase());
     });
     setFilteredBooks(filteredBooks);
   };
@@ -68,13 +79,27 @@ export default function Home() {
           </DropdownMenu>
           <Input
             placeholder={`Search by ${textFormatter(filterName)}...`}
-            value={bookData[filterName]}
+            value={bookData[filterName]!}
             onChange={onInputChange}
             name={filterName}
           />
+          <TooltipProvider delayDuration={100}>
+            <Tooltip>
+              <TooltipTrigger>
+                <Link href="/add-book">
+                  <IoMdAddCircleOutline size={30} />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Add Book</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         </div>
         <Books filteredBooks={filteredBooks} filterName={filterName} />
       </div>
     </BookContext.Provider>
   );
-}
+};
+
+export default Home;

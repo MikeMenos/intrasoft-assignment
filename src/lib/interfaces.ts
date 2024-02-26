@@ -1,11 +1,14 @@
 export interface IBook {
-  isbn: string;
+  isbn: number | null;
+  isbn13?: number | null;
+  year?: number | null;
   title: string;
   subtitle: string;
-  author: string;
+  authors: string[];
+  categories?: string[];
   published: string;
   publisher: string;
-  pages: number;
+  pages: number | null;
   description: string;
   website: string;
   image: string;
@@ -13,56 +16,74 @@ export interface IBook {
 
 export interface BookContextType {
   bookData: {
-    isbn: string;
+    isbn: number | null;
+    isbn13?: number | null;
+    year?: number | null;
     title: string;
     subtitle: string;
-    author: string;
+    authors: string[];
+    categories?: string[];
     published: string;
     publisher: string;
-    pages: number;
+    pages: number | null;
     description: string;
+    website: string;
+    image: string;
   };
   setBookData: React.Dispatch<
     React.SetStateAction<{
-      isbn: string;
+      isbn: number | null;
+      isbn13?: number | null;
+      year?: number | null;
       title: string;
       subtitle: string;
-      author: string;
+      authors: string[];
+      categories?: string[];
       published: string;
       publisher: string;
-      pages: number;
+      pages: number | null;
       description: string;
+      website: string;
+      image: string;
     }>
   >;
 }
 
 export interface TotalBooksContextType {
-  totalBooksData:  {
+  totalBooksData: {
     books: {
-      isbn: string;
+      isbn: number | null;
+      isbn13?: number | null;
+      year?: number | null;
       title: string;
       subtitle: string;
-      author: string;
+      authors: string[];
+      categories?: string[];
       published: string;
       publisher: string;
-      pages: number;
+      pages: number | null;
       description: string;
       website: string;
       image: string;
-  }[];
-  }
-  setTotalBooksData:React.Dispatch<React.SetStateAction<{
-    books: {
-        isbn: string;
+    }[];
+  };
+  setTotalBooksData: React.Dispatch<
+    React.SetStateAction<{
+      books: {
+        isbn: number | null;
+        isbn13?: number | null;
+        year?: number | null;
         title: string;
         subtitle: string;
-        author: string;
+        authors: string[];
+        categories?: string[];
         published: string;
         publisher: string;
-        pages: number;
+        pages: number | null;
         description: string;
         website: string;
         image: string;
-    }[];
-}>>
+      }[];
+    }>
+  >;
 }
