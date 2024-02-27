@@ -40,9 +40,9 @@ const Home: NextPage = () => {
     "subtitle",
     "categories",
     "authors",
+    "publisher",
     "isbn",
     "isbn13",
-    "publisher",
   ];
 
   const onFilterOptionSelect = (option: BookKey) => {
