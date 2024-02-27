@@ -5,16 +5,15 @@ import { BookContextType, TotalBooksContextType } from "./interfaces";
 import data from "../data.json";
 
 export const initialBookData = {
-  isbn: null,
-  isbn13: null,
-  year: null,
+  isbn: 0,
+  isbn13: 0,
+  year: 0,
   title: "",
   subtitle: "",
   authors: [''],
   categories: [''],
-  published: "",
   publisher: "",
-  pages: null,
+  pages: 0,
   description: "",
   website: "",
   image:""

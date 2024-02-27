@@ -1,7 +1,7 @@
 "use client";
 import Breadcrumb from "@/components/Breadcrumb";
 import "./globals.css";
-import data from "../data.json";
+import "react-toastify/dist/ReactToastify.css";
 import { TotalBooksContext, initialTotalBooksData } from "@/lib/context";
 import { useState } from "react";
 
@@ -20,6 +20,7 @@ export default function RootLayout({
           </div>
           <Breadcrumb />
           <TotalBooksContext.Provider
+            //@ts-ignore
             value={{ totalBooksData, setTotalBooksData }}
           >
             {children}

@@ -34,12 +34,21 @@ const Home: NextPage = () => {
     undefined
   );
   const [filterName, setFilterName] = useState<BookKey>("title");
-  const { totalBooksData } = useTotalBooksContext();
-  const filterOptions = ["title", "subtitle", "isbn", "authors", "publisher"];
+  const { totalBooksData, setTotalBooksData } = useTotalBooksContext();
+  const filterOptions = [
+    "title",
+    "subtitle",
+    "categories",
+    "authors",
+    "isbn",
+    "isbn13",
+    "publisher",
+  ];
 
   const onFilterOptionSelect = (option: BookKey) => {
     setBookData(initialBookData);
     setFilteredBooks(undefined);
+    // setTotalBooksData(totalBooksData);
     setFilterName(option);
   };
 
@@ -79,7 +88,9 @@ const Home: NextPage = () => {
           </DropdownMenu>
           <Input
             placeholder={`Search by ${textFormatter(filterName)}...`}
-            value={bookData[filterName]!}
+            value={
+              bookData[filterName] === 0 ? undefined : bookData[filterName]!
+            }
             onChange={onInputChange}
             name={filterName}
           />

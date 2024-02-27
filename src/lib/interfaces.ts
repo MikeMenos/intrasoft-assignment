@@ -1,14 +1,13 @@
 export interface IBook {
-  isbn: number | null;
-  isbn13?: number | null;
-  year?: number | null;
+  isbn: number | null | undefined;
+  isbn13?: number | null | undefined;
+  year: number | null | undefined;
   title: string;
   subtitle: string;
   authors: string[];
-  categories?: string[];
-  published: string;
+  categories?: string[]
   publisher: string;
-  pages: number | null;
+  pages: number | null | undefined;
   description: string;
   website: string;
   image: string;
@@ -16,32 +15,31 @@ export interface IBook {
 
 export interface BookContextType {
   bookData: {
-    isbn: number | null;
-    isbn13?: number | null;
-    year?: number | null;
+    isbn: number | null | undefined;
+    isbn13?: number | null | undefined;
+    year: number | null | undefined;
     title: string;
     subtitle: string;
     authors: string[];
     categories?: string[];
-    published: string;
     publisher: string;
-    pages: number | null;
+    pages: number | null | undefined;
     description: string;
     website: string;
     image: string;
   };
   setBookData: React.Dispatch<
     React.SetStateAction<{
-      isbn: number | null;
-      isbn13?: number | null;
-      year?: number | null;
+      isbn: number | null | undefined;
+      isbn13?: number | null | undefined;
+      year: number | null | undefined;
       title: string;
       subtitle: string;
       authors: string[];
       categories?: string[];
-      published: string;
+
       publisher: string;
-      pages: number | null;
+      pages: number | null | undefined;
       description: string;
       website: string;
       image: string;
@@ -52,16 +50,16 @@ export interface BookContextType {
 export interface TotalBooksContextType {
   totalBooksData: {
     books: {
-      isbn: number | null;
-      isbn13?: number | null;
-      year?: number | null;
+      isbn: number | null | undefined;
+      isbn13?: number | null | undefined;
+      year: number | null | undefined;
       title: string;
       subtitle: string;
       authors: string[];
       categories?: string[];
-      published: string;
+
       publisher: string;
-      pages: number | null;
+      pages: number | null | undefined;
       description: string;
       website: string;
       image: string;
@@ -70,16 +68,16 @@ export interface TotalBooksContextType {
   setTotalBooksData: React.Dispatch<
     React.SetStateAction<{
       books: {
-        isbn: number | null;
-        isbn13?: number | null;
-        year?: number | null;
+        isbn: number | null | undefined;
+        isbn13?: number | null | undefined;
+        year: number | null | undefined;
         title: string;
         subtitle: string;
         authors: string[];
         categories?: string[];
-        published: string;
+  
         publisher: string;
-        pages: number | null;
+        pages: number | null | undefined;
         description: string;
         website: string;
         image: string;
