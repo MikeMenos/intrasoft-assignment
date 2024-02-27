@@ -30,7 +30,7 @@ const Book: NextPage<{ params: { isbn: string } }> = ({ params }) => {
       <div className="flex flex-col md:flex-row justify-evenly items-center mt-10 md:px-6">
         <div className="md:w-1/2">
           <Image
-            src={book.image}
+            src={book.image ?? ""}
             alt="Book Cover Image"
             width={300}
             height={300}

@@ -28,7 +28,7 @@ const AddBook: NextPage = () => {
 
   const onSubmit = async (book: z.infer<typeof formSchema>) => {
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    //@ts-ignore=
+
     setTotalBooksData((prevState) => ({
       ...prevState,
       books: [...prevState.books, book],
@@ -62,7 +62,7 @@ const AddBook: NextPage = () => {
               name="title"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Title</FormLabel>
+                  <FormLabel>Title*</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -75,7 +75,7 @@ const AddBook: NextPage = () => {
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Description</FormLabel>
+                  <FormLabel>Description*</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -88,7 +88,7 @@ const AddBook: NextPage = () => {
               name="categories"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Categories</FormLabel>
+                  <FormLabel>Categories*</FormLabel>
                   <FormControl>
                     <Input placeholder="eg: Action, Psychology" {...field} />
                   </FormControl>
@@ -101,7 +101,7 @@ const AddBook: NextPage = () => {
               name="authors"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Author Name</FormLabel>
+                  <FormLabel>Author Name*</FormLabel>
                   <FormControl>
                     <Input placeholder="eg: John Doe, Ryan Howard" {...field} />
                   </FormControl>
@@ -114,7 +114,7 @@ const AddBook: NextPage = () => {
               name="publisher"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Publisher</FormLabel>
+                  <FormLabel>Publisher*</FormLabel>
                   <FormControl>
                     <Input {...field} />
                   </FormControl>
@@ -157,7 +157,7 @@ const AddBook: NextPage = () => {
               name="year"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Year</FormLabel>
+                  <FormLabel>Year*</FormLabel>
                   <FormControl>
                     <Input {...field} type="number" />
                   </FormControl>
@@ -169,7 +169,7 @@ const AddBook: NextPage = () => {
               name="pages"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Number of pages</FormLabel>
+                  <FormLabel>Number of pages*</FormLabel>
                   <FormControl>
                     <Input {...field} type="number" />
                   </FormControl>
@@ -181,7 +181,7 @@ const AddBook: NextPage = () => {
               name="isbn"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>ISBN-10</FormLabel>
+                  <FormLabel>ISBN-10*</FormLabel>
                   <FormControl>
                     <Input {...field} type="number" />
                   </FormControl>
@@ -193,7 +193,7 @@ const AddBook: NextPage = () => {
               name="isbn13"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>ISBN-13</FormLabel>
+                  <FormLabel>ISBN-13*</FormLabel>
                   <FormControl>
                     <Input {...field} type="number" />
                   </FormControl>

@@ -75,16 +75,15 @@ export const formSchema = z.object({
     z.coerce
       .number()
       .int()
-      .gte(1000000000, { message: "Must be 10 digits" }) // Greater than or equal to the smallest 10 digit int
+      .gte(1000000000, { message: "Must be 10 digits" })
       .lte(9999999999, { message: "Must be 10 digits" })
-      .nullable()
   ),
   isbn13: z.preprocess(
     (args) => (args === "" ? null : args),
     z.coerce
       .number()
       .int()
-      .gte(1000000000000, { message: "Must be 13 digits" }) // Greater than or equal to the smallest 10 digit int
+      .gte(1000000000000, { message: "Must be 13 digits" })
       .lte(9999999999999, { message: "Must be 13 digits" })
   ),
 });

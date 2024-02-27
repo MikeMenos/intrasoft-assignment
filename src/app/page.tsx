@@ -34,7 +34,7 @@ const Home: NextPage = () => {
     undefined
   );
   const [filterName, setFilterName] = useState<BookKey>("title");
-  const { totalBooksData, setTotalBooksData } = useTotalBooksContext();
+  const { totalBooksData } = useTotalBooksContext();
   const filterOptions = [
     "title",
     "subtitle",
@@ -48,7 +48,6 @@ const Home: NextPage = () => {
   const onFilterOptionSelect = (option: BookKey) => {
     setBookData(initialBookData);
     setFilteredBooks(undefined);
-    // setTotalBooksData(totalBooksData);
     setFilterName(option);
   };
 

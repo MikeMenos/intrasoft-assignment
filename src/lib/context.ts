@@ -16,7 +16,7 @@ export const initialBookData = {
   pages: 0,
   description: "",
   website: "",
-  image:""
+  image:"",
 };
 
 export const initialTotalBooksData = data;

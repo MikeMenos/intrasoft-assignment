@@ -1,7 +1,8 @@
 {
   "books": [
     {
-      "isbn": 9781593279509,
+      "isbn13": 9781593279509,
+      "isbn": 9781932790,
       "title": "Eloquent JavaScript, Third Edition",
       "subtitle": "A Modern Introduction to Programming",
       "authors": ["Marijn Haverbeke"],
@@ -14,7 +15,8 @@
       "categories": ["Horror", "Comedy"]
     },
     {
-      "isbn": 9781491943533,
+      "isbn13": 9781491943533,
+      "isbn": 9784914353,
       "title": "Practical Modern JavaScript",
       "subtitle": "Dive into ES6 and the Future of JavaScript",
       "authors": ["Nicolás Bevacqua"],
@@ -26,7 +28,8 @@
       "image": "https://m.media-amazon.com/images/I/51LHTs-4ziL._SY445_SX342_.jpg"
     },
     {
-      "isbn": 9781593277574,
+      "isbn13": 9781593277574,
+      "isbn": 9715932757,
       "title": "Understanding ECMAScript 6",
       "subtitle": "The Definitive Guide for JavaScript Developers",
       "authors": ["Nicholas C. Zakas"],
@@ -38,7 +41,8 @@
       "image": "https://d2sofvawe08yqg.cloudfront.net/understandinges6/s_hero?1620418785"
     },
     {
-      "isbn": 9781449365035,
+      "isbn13": 9781449365035,
+      "isbn": 9784936503,
       "title": "Speaking JavaScript",
       "subtitle": "An In-Depth Guide for Programmers",
       "authors": ["Axel Rauschmayer"],
@@ -50,7 +54,8 @@
       "image": "https://exploringjs.com/es5/index/speakingjs_cover.jpg"
     },
     {
-      "isbn": 9781449331818,
+      "isbn13": 9781449331818,
+      "isbn": 9714933118,
       "title": "Learning JavaScript Design Patterns",
       "subtitle": "A JavaScript and jQuery Developer's Guide",
       "authors": ["Addy Osmani"],
@@ -62,7 +67,8 @@
       "image": "https://m.media-amazon.com/images/I/81LpyFBbo8L._SL1500_.jpg"
     },
     {
-      "isbn": 9798602477429,
+      "isbn13": 9798602477429,
+      "isbn": 7986277429,
       "title": "You Don't Know JS Yet",
       "subtitle": "Get Started",
       "authors": ["Kyle Simpson"],
@@ -74,7 +80,8 @@
       "image": "https://github.com/getify/You-Dont-Know-JS/raw/2nd-ed/get-started/images/cover.png"
     },
     {
-      "isbn": 9781484200766,
+      "isbn13": 9781484200766,
+      "isbn": 7818420766,
       "title": "Pro Git",
       "subtitle": "Everything you neeed to know about Git",
       "authors": ["Scott Chacon", "Ben Straub"],
@@ -86,7 +93,8 @@
       "image": "https://git-scm.com/images/progit2.png"
     },
     {
-      "isbn": 9781484242216,
+      "isbn13": 9781484242216,
+      "isbn": 9781824221,
       "title": "Rethinking Productivity in Software Engineering",
       "subtitle": "Collects the wisdom of software engineering thought leaders in a form digestible for any developer.",
       "authors": ["Caitlin Sadowski", "Thomas Zimmermann"],
